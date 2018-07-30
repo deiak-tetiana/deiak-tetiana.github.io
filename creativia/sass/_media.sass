@@ -1,0 +1,199 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+
+//Extra large: ≥1200px
++media-breakpoint-down(xl)
+
+//Large: ≥992px --> 0 - 1200
++media-breakpoint-down(lg)
+
+
+  .productWrap
+    .productInnerLeft
+      .productInnerItemLeft
+        justify-content: space-between
+    .productInner
+      .productInnerItem
+        margin-top: 10px
+
+        .productInnerItemSpan
+          margin-right: 10px
+          margin-left: 10px
+          font-size: 14px
+
+
+
+//Medium: ≥768px --> 0 - 992
++media-breakpoint-down(md)
+
+  .header
+    .header-wrapper
+      .header-inner
+        .header-left
+          .logo
+            svg
+              width: 163px
+        .header-right
+          .nav
+            display: none
+            background: #000000
+            position: absolute
+            left: 0
+            top: 70px
+            width: 100%
+            min-height: 100vh
+            padding-top: 20px
+            padding-bottom: 20px
+            z-index: 10
+          ul
+            text-align: center
+            overflow-y: scroll
+            li
+              display: block
+              margin-right: 0
+              margin-top: 40px
+              a
+                font-size: 17px
+          .hamburger
+            display: block
+            &:hover
+              opacity: 1
+          .hamburger-inner
+            background: $white
+            &:after, &:before
+              background: $white
+
+  .plansFluid
+    .plansWrap
+      .plansInner
+        ul
+          margin-bottom: 40px
+
+  .footer
+    p
+      text-align: center
+
+
+
+//Small: ≥576px --> 0 - 768
++media-breakpoint-down(sm)
+  .hr
+    .hr-left-hexagon
+      width: 30px
+      top: -12.5px
+      left: calc( 50% - 15px )
+      &.on-animation
+        animation: hexagon-left 2s
+        @keyframes hexagon-left
+          from
+            opacity: 0
+            left: 0
+          to
+            opacity: 1
+            left: calc( 50% - 15px )
+    .hr-right-hexagon
+      width: 30px
+      top: -12.5px
+      right: calc( 50% - 15px )
+      @keyframes hexagon-right
+        from
+          opacity: 0
+          right: 0
+        to
+          opacity: 1
+          right: calc( 50% - 15px )
+  .main
+    .header-slider
+      .slide-item
+        .features
+          width: 100%
+          display: block
+        .free
+          width: 100%
+          display: block
+          margin-top: 15px
+        a
+          font-size: 16px
+          padding: 8px 25px
+  .desingFluid
+    padding-bottom: 50px
+  .aboutFluid, .portfolioFluid, .productFluid, .clintsFluid, .teamWorkFluid, .skillsFluid, .servicesFluid, .plansFluid, .followFluid
+    padding-top: 50px
+    padding-bottom: 50px
+    .descriptionh2
+      padding-bottom: 20px
+    .aboutWrap
+      flex-direction: column
+      .aboutInner
+        width: 100%
+      .hwoIsImg
+        order: 1
+        margin: 0 auto 20px
+      .hwoIs
+        order: 2
+    .productWrap
+      flex-direction: column
+      .productInnerImg
+        order: 1
+      .productInnerLeft
+        width: 80%
+        order: 2
+        .productInnerItemLeft
+          justify-content: flex-start
+      .productInnerRight
+        order: 3
+        width: 80%
+      .productInner
+        .productInnerItem
+          margin-top: 5px
+          padding-top: 7px
+          padding-bottom: 7px
+          .productInnerItemSpan
+            order: 2
+          .fas
+            order: 1
+  .productFluid
+    .productWrap
+      justify-content: center
+      .productInnerRight, .productInnerLeft, .productInnerImg
+        margin: 0 auto
+      .productInnerImg
+        img
+          margin-bottom: 20px
+  .skillsFluid
+    padding-bottom: 0
+  .portfolioFluid
+    .portfolioWrap
+      .portfolioItem
+        width: 100%
+
+  .footer
+    .h2
+      padding-bottom: 10px
+
+
+//Extra small: >0 --> 0 - 576
++media-breakpoint-down(xs)
+  .productWrap
+    .productInnerLeft
+      width: 100%
+    .productInnerRight
+       width: 100%
+    .productInner
+      .productInnerItem
+        padding: 12px
+        .productInnerItemSpan
+          font-size: 12px
+  .followFluid
+    .social
+      a
+        margin: 5px
+
+  .portfolioFluid
+    .portfolioWrap
+      .portfolioItem
+        p
+          margin-top: 5px
