@@ -195,6 +195,11 @@ $(function () {
     }
     else{
         $('.arrow').css({"display":"none"});
+            //
+            // $('.gif-1').attr('src','img/ezgif.com-video-to-gif-15.gif');
+            // $('.gif-2').attr('src','img/ezgif.com-video-to-gif-16.gif');
+            // $('.gif-3').attr('src','img/ezgif.com-video-to-gif-17.gif');
+
     }
 
 
