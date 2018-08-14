@@ -1,5 +1,19 @@
 $(function () {
 
+        $.fn.visible = function(partial) {
+
+            var $t            = $(this),
+                $w            = $(window),
+                viewTop       = $w.scrollTop(),
+                viewBottom    = viewTop + $w.height(),
+                _top          = $t.offset().top,
+                _bottom       = _top + $t.height(),
+                compareTop    = partial === true ? _bottom : _top,
+                compareBottom = partial === true ? _top : _bottom;
+
+            return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+        };
+
     $("html").easeScroll({
         frameRate: 60,
         animationTime: 1000,
@@ -18,38 +32,36 @@ $(function () {
     // Custom JS
 
 
-    if ($(window).width() >= 1024) {
+    if ($(window).width() >= 992 - 17) {
 // do some magic
-
         var controller = new ScrollMagic.Controller();
-
         // first
 
         var scene1 = new ScrollMagic.Scene({
             duration: "100%",
             triggerElement: "#triger1",
             triggerHook: 'onLeave'
-        }).setTween(TweenMax.to(".header-img-top", 1)).setPin(".header-wrapper").addIndicators("000").addTo(controller);
+        }).setTween(TweenMax.to(".header-img-top", 1)).setPin(".header-wrapper").addTo(controller);
 
         var scene1 = new ScrollMagic.Scene({
             duration: "30%",
             triggerElement: "#triger1",
             triggerHook: 'onLeave'
-        }).setTween(TweenMax.to(".header-img-top", 1, {"left": "-100%"})).addIndicators("111").addTo(controller);
+        }).setTween(TweenMax.to(".header-img-top", 1, {"left": "-100%"})).addTo(controller);
 
         var scene2 = new ScrollMagic.Scene({
             duration: "30%",
             offset: "110%",
             triggerElement: "#triger1",
             triggerHook: 'onLeave'
-        }).setTween(TweenMax.to(".header-learn-more", 5, {"opacity": "0"})).addIndicators("222").addTo(controller);
+        }).setTween(TweenMax.to(".header-learn-more", 5, {"opacity": "0"})).addTo(controller);
 
         var scene3 = new ScrollMagic.Scene({
             duration: "40%",
             offset: "350%",
             triggerElement: "#triger1",
             triggerHook: 'onLeave'
-        }).setTween(TweenMax.to(".header-img-bottom", 5, {"left": "-100%"})).addIndicators("333").addTo(controller);
+        }).setTween(TweenMax.to(".header-img-bottom", 5, {"left": "-100%"})).addTo(controller);
 
         // second
         var scene4 = new ScrollMagic.Scene({
@@ -57,7 +69,7 @@ $(function () {
             offset: "300%",
             triggerElement: "#triger1",
             triggerHook: 'onLeave'
-        }).setTween(TweenMax.to(".digital-new-img", 5, {"top": "-900%"})).addIndicators("444").addTo(controller);
+        }).setTween(TweenMax.to(".digital-new-img", 5, {"top": "-900%"})).addTo(controller);
 
         var scene6 = new ScrollMagic.Scene({
             duration: "70%",
@@ -66,7 +78,7 @@ $(function () {
             triggerHook: 'onLeave'
         }).setTween(TweenMax.to(".digital-right-text", 5, {
             "top": "-380%"
-        })).addIndicators("444").addTo(controller);
+        })).addTo(controller);
 
         var scene7 = new ScrollMagic.Scene({
             duration: "50%",
@@ -77,7 +89,7 @@ $(function () {
             "top": "-10%",
             "right": "0%",
             "opacity": "1"
-        })).addIndicators("444").addTo(controller);
+        })).addTo(controller);
 
 
         var wipeAnimation = new TimelineMax()
@@ -88,7 +100,7 @@ $(function () {
 
             .fromTo(".readers", 1, {
                 y: "100%"
-            }, {y: "0%", ease: Linear.easeNone})
+            }, {y: "0%", deley: 1, ease: Linear.easeNone})
 
             .fromTo(".work", 1, {
                 x: "-100%"
@@ -109,38 +121,44 @@ $(function () {
 
             .fromTo(".archive", 1, {
                 y: "100%", opacity: 0
-            }, {y: "-55%", opacity: 1, ease: Linear.easeNone})
+            }, {y: "-55%", opacity: 1, deley: 1, ease: Linear.easeNone})
+
 
             .fromTo(".archive .h2", 1, {
                 opacity: 0
             }, {opacity: 1, ease: Linear.easeNone})
 
-            .fromTo(".archive p", 1, {
+
+            .fromTo(".archive .archive-readers", 1, {
                 opacity: 0
             }, {opacity: 1, ease: Linear.easeNone})
 
-            // .fromTo(".archive", 1, {
-            //     opacity: 1
-            // }, {opacity: 1, background: "#ffffff url(../img/archive-bg.svg)", ease: Linear.easeNone})
+            .fromTo(".archive ", 1, {
+
+            }, {background: "#ffffff", delay: 1, ease: Linear.easeNone})
+
+            .fromTo(".archive .h2", 1, {
+                x: 0, y: "0"
+            }, {x: "-20%", y: "-10%", scale: "0.7", ease: Linear.easeNone})
 
 
-            .fromTo(".archive .h2, .archive p", 1, {
-                x: 0
-            }, {x: "-40%", scale: "0.7", ease: Linear.easeNone})
+            .fromTo(".archive .archive-readers", 1, {
+                x: 0, y: "0%"
+            }, {x: "-20%", y: "-200%", scale: "0.9", ease: Linear.easeNone})
 
 
-            .fromTo(".more", 1, {
-                y: "100%"
-            }, {y: "-55%", ease: Linear.easeNone})
+            .fromTo(".archive .archive-description", 1, {
+                opacity: 0, y: "100%",  x: "10%"
+            }, {opacity: 1, y: "-80%",  x: "10%", display: "block", ease: Linear.easeNone })
 
-
-            // .from(".archive", 1, {y: "100%", opacity: 0, ease: Power4.easeInOut})
-            // .to(".archive ", 0.5, {y: "-55%", opacity: 1});
+            .fromTo(".archive .more-right", 1, {
+                opacity: 0, y: "100%"
+            }, {opacity: 1, y: "-80%", ease: Linear.easeNone})
 
 
             .fromTo(".firstDesc", 1, {
                 y: "100%"
-            }, {y: "-55%", ease: Linear.easeNone});
+            }, {y: "-155%", ease: Linear.easeNone});
 
 
         new ScrollMagic.Scene({
@@ -151,71 +169,52 @@ $(function () {
         })
             .setPin("#pinContainer")
             .setTween(wipeAnimation)
-            .addIndicators()
+
             // .setClassToggle(".archive", "not-active")
             .addTo(controller)
             .on('enter', function (e) {
             });
 
 
-        // var scene8 = new ScrollMagic.Scene({
-        //     // duration: "50%",
-        //     offset: "350%",
-        //     triggerElement: ".blue",
-        //     triggerHook: 'onLeave'
-        // }).setTween(TweenMax.to(".blue", 5, {})).addIndicators("444").setPin(".blue").addTo(controller);
-        //
-        // var scene9 = new ScrollMagic.Scene({
-        //     // duration: "50%",
-        //     offset: "500%",
-        //     triggerElement: ".turqoise",
-        //     triggerHook: 'onLeave'
-        // }).setTween(TweenMax.to(".turqoise", 5, {})).addIndicators("444").setPin(".turqoise").addTo(controller);
+        /*===================== arrow start ===================================*/
+        var header_height = $(".header-wrapper").height();
+        $(window).scroll(function(){
+            var wintop = $(window).scrollTop();
+            if(wintop >= header_height - 500){
+                $('.arrow').fadeOut()
+            }
+            else{
+                $('.arrow').fadeIn()
+            }
+        });
 
-
-        // var controller = new ScrollMagic.Controller({
-        //     globalSceneOptions: {
-        //         triggerHook: 'onLeave'
-        //     }
-        // });
-        // var slides = document.querySelectorAll(".panel");
-        //
-        // // create scene for every slide
-        // for (var i = 0; i < slides.length; i++) {
-        //     new ScrollMagic.Scene({
-        //         triggerElement: slides[i]
-        //     })
-        //         .setPin(slides[i])
-        //         .addIndicators() // add indicators (requires plugin)
-        //         .addTo(controller);
-        // }
-
-
+        $('.arrow').click(function(){
+            $('html,body').animate({scrollTop:header_height + 30 },2000)
+        })
+        /*===================== arrow end===================================*/
+    }
+    else{
+        $('.arrow').css({"display":"none"});
     }
 
 
-    // var membersList = $(".madeIn .members-inner");
-    //
-    // var win = $(window);
-    // win.scroll(function (event) {
-    //
-    //     console.log(membersList)
-    //
-    //     for(let j = 0; j < membersList.length; j++  ){
-    //
-    //         if( !membersList[j].classList.contains("come-in")){
-    //             for (let i = 0; i < membersList.length; i++) {
-    //                 setTimeout(function () {
-    //                     membersList[i].className += " come-in";
-    //                 }, i * 200);
-    //             }
-    //         }
-    //     }
-    //
-    //
-    //
-    //
-    // });
+    var win = $(window);
+    var membersList = $(".madeIn .members-inner");
+    win.scroll(function (event) {
+        membersList.each(function(i, el) {
+            var el = $(el);
+            if (el.visible(true)) {
+                setTimeout(function(){
+                    el.addClass("come-in");
+                },i*200);
+            }
+        });
+
+    });
+
+
+
+
 });
 
 
