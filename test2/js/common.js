@@ -120,7 +120,7 @@ $(function () {
 
             .fromTo(".archive", 1, {
                 y: "100%", opacity: 0
-            }, {y: "-65%", opacity: 1, deley: 1, ease: Linear.easeNone})
+            }, {y: "-65%", opacity: 1, delay: 1, ease: Linear.easeNone})
 
             .fromTo(".archive .h2", 1, {
                 opacity: 0
@@ -130,19 +130,21 @@ $(function () {
                 opacity: 0
             }, {opacity: 1, ease: Linear.easeNone})
 
-            .fromTo(".archive ", 1, {}, {background: "#ffffff", delay: 1, ease: Linear.easeNone})
+            .fromTo(".archive .archive-bg-img", 1, {
+                opacity: 1
+            }, { opacity: 0,  delay: 1, ease: Linear.easeNone})
 
             .fromTo(".archive .h2", 1, {
                 x: 0, y: "0"
-            }, {x: "-20%", y: "-10%", scale: "0.7", ease: Linear.easeNone})
+            }, {x: "-25%", y: "-10%", scale: "0.7", ease: Linear.easeNone})
 
             .fromTo(".archive .archive-readers", 1, {
                 x: 0, y: "0%"
             }, {x: "-20%", y: "-200%", scale: "0.9", ease: Linear.easeNone})
 
             .fromTo(".archive .archive-description", 1, {
-                opacity: 0, y: "100%", x: "10%"
-            }, {opacity: 1, y: "-80%", x: "10%", display: "block", ease: Linear.easeNone})
+                opacity: 0, y: "100%", x: "21%"
+            }, {opacity: 1, y: "-70%", x: "21%", display: "block", ease: Linear.easeNone})
 
             .fromTo(".archive .more-right", 1, {
                 opacity: 0, y: "100%"
@@ -150,7 +152,7 @@ $(function () {
 
             .fromTo(".firstDesc", 1, {
                 y: "100%"
-            }, {y: "-155%", ease: Linear.easeNone});
+            }, {y: "-165%", ease: Linear.easeNone});
 
         new ScrollMagic.Scene({
             triggerElement: "#pinContainer",
