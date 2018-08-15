@@ -1,13 +1,10 @@
 $(function () {
 
-
     setTimeout(function () {
         $('.header-wrapper .header-img-top-mobile').addClass('active')
     }, 150);
 
-
     $.fn.visible = function (partial) {
-
         var $t = $(this),
             $w = $(window),
             viewTop = $w.scrollTop(),
@@ -35,11 +32,9 @@ $(function () {
         fixedBackground: true
     });
 
-    // Custom JS
-
 
     if ($(window).width() >= 992 - 17) {
-// do some magic
+        // do some magic
         var controller = new ScrollMagic.Controller();
         // first
 
@@ -99,7 +94,6 @@ $(function () {
 
 
         var wipeAnimation = new TimelineMax()
-
             .fromTo(".stories", 1, {
                 y: "100%"
             }, {y: "0%", ease: Linear.easeNone})
@@ -124,16 +118,13 @@ $(function () {
                 y: "100%"
             }, {y: "-55%", ease: Linear.easeNone})
 
-
             .fromTo(".archive", 1, {
                 y: "100%", opacity: 0
             }, {y: "-55%", opacity: 1, deley: 1, ease: Linear.easeNone})
 
-
             .fromTo(".archive .h2", 1, {
                 opacity: 0
             }, {opacity: 1, ease: Linear.easeNone})
-
 
             .fromTo(".archive .archive-readers", 1, {
                 opacity: 0
@@ -145,11 +136,9 @@ $(function () {
                 x: 0, y: "0"
             }, {x: "-20%", y: "-10%", scale: "0.7", ease: Linear.easeNone})
 
-
             .fromTo(".archive .archive-readers", 1, {
                 x: 0, y: "0%"
             }, {x: "-20%", y: "-200%", scale: "0.9", ease: Linear.easeNone})
-
 
             .fromTo(".archive .archive-description", 1, {
                 opacity: 0, y: "100%", x: "10%"
@@ -159,11 +148,9 @@ $(function () {
                 opacity: 0, y: "100%"
             }, {opacity: 1, y: "-80%", ease: Linear.easeNone})
 
-
             .fromTo(".firstDesc", 1, {
                 y: "100%"
             }, {y: "-155%", ease: Linear.easeNone});
-
 
         new ScrollMagic.Scene({
             triggerElement: "#pinContainer",
@@ -178,7 +165,6 @@ $(function () {
             .addTo(controller)
             .on('enter', function (e) {
             });
-
 
         /*===================== arrow start ===================================*/
         var header_height = $(".header-wrapper").height();
@@ -204,6 +190,9 @@ $(function () {
         setTimeout(function () {
             $('.header-wrapper .header-learn-more').addClass('active')
         }, 350);
+        setTimeout(function () {
+            $('.digital-new-img-mobile').addClass('come-in')
+        }, 350);
 
         setTimeout(function () {
             $('.header-wrapper .header-right .digital-text-mobile ,.header-wrapper .header-right .header-learn-text').addClass('active')
@@ -218,9 +207,7 @@ $(function () {
         $('.gif-2').attr('src', 'img/gif-16-opt.gif');
         $('.gif-3').attr('src', 'img/gif-17-opt.gif');
 
-
         var win = $(window);
-        var come_in_1 = $(".digital-new-wrapper .digital-new-img-mobile");
         var come_in_2 = $(".digital-new-wrapper .touch-it");
         var come_in_3 = $(".pinContainer .full-width .h2");
         var come_in_4 = $(".pinContainer .stories .stories-left .h2");
@@ -235,7 +222,6 @@ $(function () {
         var come_in_13 = $(".pinContainer .archive .h2");
         var come_in_14 = $(".pinContainer .archive .archive-readers");
         var come_in_15 = $(".pinContainer .archive .archive-description");
-
         var come_in_16 = $(".pinContainer .firstDesc .h2");
         var come_in_17 = $(".secondDesc .h2");
         var come_in_18 = $(".thirdDesc .h2");
@@ -243,15 +229,6 @@ $(function () {
         var come_in_20 = $(".publisher .h2");
         var come_in_21 = $(".publisher p");
         var come_in_22 = $(".madeIn .h2 ");
-
-
-        win.scroll(function (event) {
-            if (come_in_1.visible(true)) {
-                setTimeout(function () {
-                    come_in_1.addClass("come-in");
-                }, 200);
-            }
-        });
 
         win.scroll(function (event) {
             if (come_in_2.visible(true)) {
@@ -414,9 +391,7 @@ $(function () {
             }
         });
 
-
     }
-
 
     var win = $(window);
     var membersList = $(".madeIn .members-inner");
