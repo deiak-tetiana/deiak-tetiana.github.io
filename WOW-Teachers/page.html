@@ -2,22 +2,43 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Каталог</title>
+    <title>Мобільні телефони</title>
     <link rel="stylesheet" href="dist/css/main.min.css">
 </head>
 <body>
 <div class="container-fluid productsFluid" >
-    <div class="container products">
+    <div class="container products" id="products">
+        <a href="index.html">Повернутись на головну сторінку</a>
         <h1>Мобільні телефони</h1>
         <ul>
-            <li><img src="img/collections/1.jpg" alt=""></li>
-            <li><img src="img/collections/2.jpg" alt=""></li>
-            <li><img src="img/collections/3.jpg" alt=""></li>
-            <li><img src="img/collections/4.jpg" alt=""></li>
-            <li><img src="img/collections/5.jpg" alt=""></li>
-            <li><img src="img/collections/6.jpg" alt=""></li>
-            <li><img src="img/collections/7.jpg" alt=""></li>
-            <li><img src="img/collections/8.jpg" alt=""></li>
+            <li>
+                <img  id="phone1" src="img/collections/1.jpg" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet.
+                </p>
+            </li>
+            <li  id="phone2">
+                <img src="img/collections/2.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque eos eum laudantium minus quidem.</p>
+
+
+            </li>
+            <li><img   id="phone3" src="img/collections/3.jpg" alt=""><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid consequuntur doloribus dolorum explicabo harum ipsam molestias nobis rem sunt.</p></li>
+            <li><img src="img/collections/4.jpg" alt=""> <p>
+                Lorem ipsum dolor sit amet.
+            </p></li>
+            <li><img src="img/collections/7.jpg" alt=""> <p>
+                Lorem ipsum dolor sit amet.
+            </p></li>
+            <li><img src="img/collections/8.jpg" alt=""> <p>
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+            </p></li>
+            <li><img src="img/collections/7.jpg" alt=""> <p>
+                Lorem ipsum dolor sit amet.
+            </p></li>
+            <li><img src="img/collections/8.jpg" alt=""> <p>
+                Lorem ipsum dolor sit amet.
+            </p></li>
             <li><img src="img/collections/9.jpg" alt=""></li>
             <li><img src="img/collections/10.jpg" alt=""></li>
             <li><img src="img/collections/11.jpg" alt=""></li>
@@ -25,13 +46,16 @@
             <li><img src="img/collections/13.jpg" alt=""></li>
             <li><img src="img/collections/14.jpg" alt=""></li>
             <li><img src="img/collections/15.jpg" alt=""></li>
-            <li><img src="img/collections/16.jpg" alt=""></li>
-            <li><img src="img/collections/17.jpg" alt=""></li>
-            <li><img src="img/collections/18.jpg" alt=""></li>
-            <li><img src="img/collections/19.jpg" alt=""></li>
+
         </ul>
 
     </div>
 </div>
+<script>
+    document.getElementById("phone1").style.height = "400px";
+    document.getElementById("phone2").style.color = "red";
+    document.getElementById("phone3").style.border = "solid 7px green";
+    document.getElementById("phone3").style.borderRadius = "24px";
+</script>
 </body>
 </html>
